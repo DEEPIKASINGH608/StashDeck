@@ -7,7 +7,8 @@ yargs(hideBin(process.argv)).command(
     "init",
     "Initialise a new repository",
     {},
-    initRepo
-);
+    initRepo)
+    .demandCommand(1, "You  need atleat one command")
+    .help().argv;
 
 

@@ -6,7 +6,12 @@ async function initRepo() {
     const commitsPath = path.join(repoPath, "commits");
 
     try {
-        await fs.mkdir(repoPath, { recursive: true })
+        await fs.mkdir(repoPath, { recursive: true });
+        await fs.mkdir(commitsPath, { recursive: true });
+        await fs.writeFile(
+            path.join(repoPath, "config.json"),
+            JSON.stringyfy({ bucket: process.env.S3_BUCKET })
+        );
     } catch(err) {
         console.error("Error initialising repository", err);
     }

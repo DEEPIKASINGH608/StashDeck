@@ -2,7 +2,7 @@ const fs = require("fs").promises;
 const path = require('path')
 
 async function initRepo() {
-    const repoPath = path.resolve(process.cwd(), ".StashDeck")
+    const repoPath = path.resolve(process.cwd(), ".StashDeckGit")
     const commitsPath = path.join(repoPath, "commits");
 
     try {
@@ -10,7 +10,7 @@ async function initRepo() {
         await fs.mkdir(commitsPath, { recursive: true });
         await fs.writeFile(
             path.join(repoPath, "config.json"),
-            JSON.stringyfy({ bucket: process.env.S3_BUCKET })
+            JSON.stringify({ bucket: process.env.S3_BUCKET })
         );
         console.log("Repository initialised!");
     } catch(err) {
@@ -19,11 +19,6 @@ async function initRepo() {
 }
 
 module.exports = { initRepo };
-
-
-
-
-
 
 
 

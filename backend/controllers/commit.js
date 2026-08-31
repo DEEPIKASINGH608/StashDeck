@@ -3,8 +3,9 @@ const path = require('path');
 const { v4:uuid4 } = require("uuid");
 
 
-async function commitRepo() {
-    console.log("Commit command called");
+async function commitRepo(message) {
+    const repoPath = path.resolve(process.cwd(), ".StashDeckGit");
+    const stagedPath = path.join(repoPath, "staging")
 }
 
 

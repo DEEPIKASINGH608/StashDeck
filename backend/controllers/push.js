@@ -6,7 +6,13 @@ async function pushRepo() {
     const repoPath = path.resolve(process.cwd(), ".StashDeckGit");
     const commitPath = path.join(repoPath, "commits");
 
-    
+    try {
+        const commitDir = await fs.readdir(commitPath);
+        for(const commitDir)
+    }
+    catch (err) {
+
+    }
 }
 
 module.exports = { pushRepo };

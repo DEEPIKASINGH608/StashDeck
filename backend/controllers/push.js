@@ -8,10 +8,12 @@ async function pushRepo() {
 
     try {
         const commitDir = await fs.readdir(commitPath);
-        for(const commitDir)
+        for(const commitDir of commitDirs) {
+            const commitPath = path.join(commitsPath, commitDir);
+        }
     }
     catch (err) {
-
+        console.error("Error pushing to S3 : ", err);
     }
 }
 

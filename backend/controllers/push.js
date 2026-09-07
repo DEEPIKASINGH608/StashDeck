@@ -9,7 +9,15 @@ async function pushRepo() {
     try {
         const commitDir = await fs.readdir(commitPath);
         for(const commitDir of commitDirs) {
-            const commitPath = path.join(commitsPath, commitDir);
+            const commitPath = path.join(commitPath, commitDir);
+            const files = await fs.readdir(commitPath);
+
+            for(const file of files) {
+                const filePath = path.join(commitPath, file);
+                const params = {
+                    Bucket: S3_BUCKET
+                }
+            }
         }
     }
     catch (err) {

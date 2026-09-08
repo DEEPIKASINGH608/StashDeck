@@ -2,7 +2,7 @@ const fs = require("fs").promises;
 const path = require('path')
 
 async function initRepo() {
-    const repoPath = path.resolve(process.cwd(), ".StashDeckGit")
+    const repoPath = path.resolve(process.cwd(), ".StashDeck")
     const commitsPath = path.join(repoPath, "commits");
 
     try {
@@ -19,4 +19,3 @@ async function initRepo() {
 }
 
 module.exports = { initRepo };
-

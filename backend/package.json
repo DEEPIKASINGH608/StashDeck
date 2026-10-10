@@ -11,8 +11,8 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "aws-sdk": "^2.1693.0",
-    "uuid": "^14.0.2",
+    "aws-sdk": "^1.18.0",
+    "uuid": "^14.0.3",
     "yargs": "^18.1.0"
   }
 }

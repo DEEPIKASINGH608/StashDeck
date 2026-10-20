@@ -3,7 +3,7 @@ const path = require('path');
 const {s3, S3_BUCKET} = require("../config/aws-config");
 
 async function pushRepo() {
-    const repoPath = path.resolve(process.cwd(), ".StashDeckGit");
+    const repoPath = path.resolve(process.cwd(), ".stashDeck");
     const commitPath = path.join(repoPath, "commits");
 
     try {

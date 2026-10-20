@@ -4,7 +4,7 @@ const {v4:uuidv4} = require("uuid");
 
 
 async function commitRepo(message) {
-    const repoPath = path.resolve(process.cwd(), ".apnaGit");
+    const repoPath = path.resolve(process.cwd(), ".stashDeck");
     const stagedPath = path.join(repoPath, "staging")
     const commitPath = path.join(repoPath, "commits");
 
@@ -23,9 +23,16 @@ async function commitRepo(message) {
 
 
 
-        await fs.writeFile(path.join(commitDir, "commitDir.json"))
+        await fs.writeFile(
+            path.join(commitDir, "commitDir.json"),
+            JSON.stringify({message, date:new Date().toISOString})
+        );
+
+        console.log(`Commit ${commitID} created with message : ${message}`)
+
+
     }catch(err) {
-        console.err("Error committing files : ", err);
+        console.error("Error committing files : ", err);
     }
 }
 
